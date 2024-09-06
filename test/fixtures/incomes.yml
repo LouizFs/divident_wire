@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 
+  name: MyString
+  description: MyText
+  category: one
+  received_on: 2024-09-06 01:07:04
+
+two:
+  amount: 
+  name: MyString
+  description: MyText
+  category: two
+  received_on: 2024-09-06 01:07:04
