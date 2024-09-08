@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_07_044302) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_08_033937) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_07_044302) do
     t.integer "kind", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "wallet_id", null: false
+    t.index ["wallet_id"], name: "index_categories_on_wallet_id"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -31,7 +33,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_07_044302) do
     t.datetime "paid_on", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "wallet_id", null: false
     t.index ["category_id"], name: "index_expenses_on_category_id"
+    t.index ["wallet_id"], name: "index_expenses_on_wallet_id"
   end
 
   create_table "incomes", force: :cascade do |t|
@@ -43,7 +47,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_07_044302) do
     t.datetime "received_on", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "wallet_id", null: false
     t.index ["category_id"], name: "index_incomes_on_category_id"
+    t.index ["wallet_id"], name: "index_incomes_on_wallet_id"
   end
 
   create_table "users", force: :cascade do |t|

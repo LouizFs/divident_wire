@@ -1,0 +1,3 @@
+<%= turbo_frame_tag 'category' do %>
+  <%= dw_table elements: Category.all, keys: [:name, :kind], with_checks: true, type: 'Category', actions: true %>
+<% end %>

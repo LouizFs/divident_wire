@@ -34,7 +34,11 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# monetary library
 gem "money-rails", "~> 1.15"
+
+# authentication
+gem "devise", "~> 4.9"
 
 group :development, :test do
   gem "pry"

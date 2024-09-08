@@ -1,0 +1,18 @@
+<%= turbo_frame_tag 'category' do%>
+  <%= dw_card do %>
+    <div class="row">
+      <div class="col-md-6 col-xl-4">
+        <div class="mb-4">
+          <%= label_tag :name,nil,class: 'form-label'%>
+          <%= text_field_tag :name,@category.name, class: 'form-control', placeholder: 'name', disabled: true%>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="mb-4 position-relative">
+          <%= label_tag :kind,nil, class: 'form-label'%>
+          <%= text_field_tag :kind, @category.kind, class: "form-select form-control", disabled: true %>
+        </div>
+      </div>
+    </div>
+  <%end%>
+<% end %>
