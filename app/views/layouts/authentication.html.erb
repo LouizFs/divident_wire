@@ -18,18 +18,23 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body class="d2c_theme_light">
-    <div class="d2c_wrapper show">
-      <%= render 'layouts/components/sidebar'%>
+  <body>
+    <div>
       <!-- Main Body-->
-      <div class="d2c_main p-4 ps-lg-3">
-        <%= render 'layouts/components/title' %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-      </div>
+      <section class="d2c_login_system d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xxl-4 offset-xxl-4">
+              <div class="d2c_login_wrapper">
+                <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p>
+                <%= yield %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- End:Main Body -->
     </div>
-    <%= render 'layouts/components/footer'%>
   </body>
 </html>

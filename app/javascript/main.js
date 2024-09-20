@@ -31,12 +31,12 @@ $("#d2c_theme_changer").change(function () {
 });
 
 // Preloader
-window.onload = function () {
-	var $preloader = $(".preloader");
-	$preloader.delay(800).fadeOut(200, function () {
-		$(".d2c_wrapper").addClass("show");
-	});
-};
+// window.onload = function () {
+// 	var $preloader = $(".preloader");
+// 	$preloader.delay(800).fadeOut(200, function () {
+// 		$(".d2c_wrapper").addClass("show");
+// 	});
+// };
 (() => {
 	"use strict";
 	const forms = document.querySelectorAll(".form-validation");
