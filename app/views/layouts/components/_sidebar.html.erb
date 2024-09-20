@@ -14,7 +14,7 @@
       </a>
       <!-- End:Profile Image-->
       <div class="card-body mt-4">
-        <h6 class="fw-bold mb-3">Wade Warren</h6>
+        <h6 class="fw-bold mb-3"><%= "Luiz Felipe Silva" %> </h6>
         <ul class="list-inline">
           <!-- Notification -->
           <li class="list-inline-item position-relative me-3">
@@ -169,18 +169,18 @@
             <ul class="sub-menu collapse show">
               <!-- Sub Menu Item -->
               <li class="nav-item active">
-                <a class="sub-menu-link" href="./index.html">
+                <%= link_to url_for(controller: 'home', action: 'index'), class: 'sub-menu-link', data: {turbo_frame: 'home'} do%>
                   <span class="d2c_icon">
                     <i class="fas fa-home"></i>
                   </span>
                   <span>
                     Overview
                   </span>
-                </a>
+                <%- end %>
               </li>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
-              <li class="nav-item">
+              <%# <li class="nav-item">
                 <a class="sub-menu-link" href="./pages/payment.html">
                   <span class="d2c_icon">
                     <i class="fas fa-money-check-alt"></i>
@@ -189,10 +189,10 @@
                     Payment
                   </span>
                 </a>
-              </li>
+              </li> %>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
-              <li class="nav-item">
+              <%# <li class="nav-item">
                 <a class="sub-menu-link" href="./pages/transaction.html">
                   <span class="d2c_icon">
                     <i class="fas fa-list-alt"></i>
@@ -201,7 +201,7 @@
                     Transaction
                   </span>
                 </a>
-              </li>
+              </li> %>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
               <li class="nav-item">
@@ -216,7 +216,7 @@
               </li>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
-              <li class="nav-item">
+              <%# <li class="nav-item">
                 <a class="sub-menu-link" href="./pages/investment.html">
                   <span class="d2c_icon">
                     <i class="fas fa-network-wired"></i>
@@ -225,10 +225,10 @@
                     Investment
                   </span>
                 </a>
-              </li>
+              </li> %>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
-              <li class="nav-item">
+              <%# <li class="nav-item">
                 <a class="sub-menu-link" href="./pages/stocksFund.html">
                   <span class="d2c_icon">
                     <i class="fas fa-chart-line"></i>
@@ -237,7 +237,7 @@
                     Stock & Fund
                   </span>
                 </a>
-              </li>
+              </li> %>
               <!-- End:Sub Menu Item -->
             </ul>
             <!-- End:Sub Menu -->
@@ -252,18 +252,18 @@
             <ul class="sub-menu collapse show" id="extra">
               <!-- Sub Menu Item -->
               <li class="nav-item">
-                <a class="sub-menu-link" href="./pages/faq.html">
+                <%= link_to url_for(controller: 'categories', action: 'index'), class: 'sub-menu-link',data: { turbo_frame: 'categories' } do %>
                   <span class="d2c_icon">
                     <i class="fas fa-question-circle"></i>
                   </span>
                   <span>
-                    FAQ
+                    Category
                   </span>
-                </a>
+                <% end %>
               </li>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
-              <li class="nav-item">
+              <%# <li class="nav-item">
                 <a class="sub-menu-link" data-bs-toggle="collapse" data-bs-target="#authentication" aria-expanded="false" href="#">
                   <span class="d2c_icon">
                     <i class="fas fa-sticky-note"></i>
@@ -315,10 +315,10 @@
                   <!-- End:Child Sub Menu Item -->
                 </ul>
                 <!-- End:Child Sub Menu -->
-              </li>
+              </li> %>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
-              <li class="nav-item">
+              <%# <li class="nav-item">
                 <a class="sub-menu-link" data-bs-toggle="collapse" data-bs-target="#elements" aria-expanded="false" href="#">
                   <span class="d2c_icon">
                     <i class="fas fa-th"></i>
@@ -482,7 +482,7 @@
                   <!-- End:Child Sub Menu Item -->
                 </ul>
                 <!-- End:Child Sub Menu -->
-              </li>
+              </li> %>
               <!-- End:Sub Menu Item -->
             </ul>
             <!-- End:Sub Menu -->
@@ -490,7 +490,7 @@
           <!-- End:Menu Item -->
           <!-- Menu Item -->
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <%# <a class="nav-link" href="#">
               <span>Support</span>
             </a>
             <!-- Sub Menu -->
@@ -531,7 +531,7 @@
                 </a>
               </li>
               <!-- End:Sub Menu Item -->
-            </ul>
+            </ul> %>
             <!-- End:Sub Menu -->
           </li>
           <!-- End:Menu Item -->

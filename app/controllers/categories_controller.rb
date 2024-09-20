@@ -2,16 +2,6 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [ :show, :edit, :update, :destroy ]
   def index
     @categories = Category.all.order(created_at: :desc)
-
-    respond_to do |format|
-      format.html do
-        if turbo_frame_request?
-          render partial: "categories/index"
-        else
-          render :index
-        end
-      end
-    end
   end
 
   def show
