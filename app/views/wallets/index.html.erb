@@ -1,0 +1,3 @@
+<%= turbo_frame_tag "wallet" do %>
+  <%= dw_table elements: Wallet.all, keys: [:name, :description], with_checks: true, type: 'Wallet', actions: true %>
+<% end%>

@@ -1,4 +1,7 @@
 <div class="card h-auto">
+  <div class="card-header">
+    <%= link_to sanitize("&larr; Back to #{@type}"), send("#{@type}s_path") %>
+  </div>
   <div class="card-body">
     <%= yield %>
   </div>

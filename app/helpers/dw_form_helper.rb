@@ -1,5 +1,6 @@
 module DwFormHelper
-  def dw_card(&block)
+  def dw_card(type, &block)
+    @type = type
     render("common/card") { capture(&block) }
   end
 

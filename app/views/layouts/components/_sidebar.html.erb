@@ -205,14 +205,14 @@
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
               <li class="nav-item">
-                <a class="sub-menu-link" href="./pages/wallet.html">
+                <%= link_to url_for(controller: 'wallets', action: 'index'), class: 'sub-menu-link',data: { turbo_frame: 'wallets' } do %>
                   <span class="d2c_icon">
                     <i class="fas fa-wallet"></i>
                   </span>
                   <span>
                     Wallet
                   </span>
-                </a>
+                <% end %>
               </li>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->

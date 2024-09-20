@@ -1,0 +1,18 @@
+<%= turbo_frame_tag 'wallet' do%>
+  <%= dw_card :wallet do %>
+    <div class="row">
+      <div class="col-md-6 col-xl-4">
+        <div class="mb-4">
+          <%= label_tag :name,nil,class: 'form-label'%>
+          <%= text_field_tag :name,@wallet.name, class: 'form-control', placeholder: 'name', disabled: true%>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="mb-4">
+          <%= label_tag :description,nil,class: 'form-label'%>
+          <%= text_field_tag :description, @wallet.description,  class: 'form-control', placeholder: 'name', disabled: true%>
+        </div>
+      </div>
+    </div>
+  <%end%>
+<% end %>
