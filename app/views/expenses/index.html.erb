@@ -1,0 +1,3 @@
+<%= turbo_frame_tag 'expense' do %>
+  <%= dw_table elements: Expense.all, keys: [:name, :category_name, :amount_value], with_checks: true, type: 'Expense', actions: true %>
+<% end %>

@@ -1,0 +1,30 @@
+<%= turbo_frame_tag "expense" do%>
+  <%= dw_card :expense do %>
+    <div class="row">
+      <div class="col-md-6 col-xl-4">
+        <div class="mb-4">
+          <%= label_tag :name, 'Name', class: 'form-label' %>
+          <%= text_field_tag :name, @expense.name, class: 'form-control', placeholder: 'name', disabled: true %>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="mb-4 position-relative">
+          <%= label_tag :category_name, 'Category', class: 'form-label' %>
+          <%= text_field_tag :category_name, @expense.category.name, class: 'form-control', disabled: true %>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="mb-4">
+          <%= label_tag :amount, 'Amount', class: 'form-label' %>
+          <%= text_field_tag :amount, number_to_currency(@expense.amount), class: 'form-control', placeholder: 'amount', disabled: true %>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="mb-4">
+          <%= label_tag :description, 'Description', class: 'form-label' %>
+          <%= text_area_tag :description, @expense.description, class: 'form-control', disabled: true %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end%>

@@ -37,7 +37,7 @@
                     </td>
                   <% end %>
                   <%- keys.each_with_index do |key, index|%>
-                    <td><%= element[key]%></td>
+                    <td><%= element.send(key)%></td>
                   <% end%>
                   <% if actions %>
                     <td>
