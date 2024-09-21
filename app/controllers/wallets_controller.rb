@@ -15,6 +15,20 @@ class WalletsController < ApplicationController
   def edit
   end
 
+
+  def current
+    @wallet = current_user.wallets.find_by(id: params[:wallet_id])
+
+    if @wallet
+      session[:current_wallet_id] = @wallet.id
+    end
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.turbo_stream
+    end
+  end
+
   def create
     @wallet = current_user.wallets.new(wallet_params)
     respond_to do |format|

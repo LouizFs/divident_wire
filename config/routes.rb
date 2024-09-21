@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :incomes
   resources :expenses
-  resources :wallets
   resources :categories
+
+   resources :wallets do
+    get "current", on: :collection
+   end
+
   get "home/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

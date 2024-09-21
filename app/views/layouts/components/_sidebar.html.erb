@@ -2,8 +2,8 @@
 <div class="d2c_sidebar offcanvas-lg offcanvas-start p-4 pe-lg-2" tabindex="-1" id="d2c_sidebar">
   <div class="d-flex flex-column">
     <!-- Logo -->
-    <a href="./index.html" class="mb-5 brand-icon">
-      <img class="navbar-brand" src="/template/assets/images/logo/logo.png" alt="logo">
+    <a href="./index.html"  class="mb-5 brand-icon text-center mb-4">
+      <h3 style="color: #00aa5d;" class="text-capitalize">DividendWire</h3>
     </a>
     <!-- End:Logo -->
     <!-- Profile -->
@@ -146,13 +146,14 @@
           </li>
           <!-- End:Setting -->
         </ul>
-        <!-- Search -->
-        <form>
-          <div class="input-group">
-            <input class="form-control" type="search" placeholder="Search">
+        <!-- wallet select -->
+        <%= form_with url: current_wallets_path, method: :get, data: {turbo_stream: true} do |form| %>
+          <div class="form-group">
+            <%= form.label :wallet_id, 'Select Wallet' %>
+            <%= form.select :wallet_id, options_from_collection_for_select(current_user.wallets, :id, :name, session[:current_wallet_id]), {}, class: 'form-control', onchange: 'this.form.submit()' %>
           </div>
-        </form>
-        <!-- End:Search -->
+        <% end %>
+        <!-- End:wallet select -->
       </div>
     </div>
     <!-- End:Profile -->
@@ -205,27 +206,27 @@
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
               <li class="nav-item">
-                <%= link_to wallets_path, class: 'sub-menu-link',data: { turbo_frame: 'wallets' } do %>
+                <%= link_to wallets_path, class: 'sub-menu-link',data: { turbo_frame: 'wallet' } do %>
                   <span class="d2c_icon">
                     <i class="fas fa-wallet"></i>
                   </span>
                   <span>
-                    Wallet
+                    Wallets
                   </span>
                 <% end %>
               </li>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
-              <%# <li class="nav-item">
-                <a class="sub-menu-link" href="./pages/investment.html">
+              <li class="nav-item">
+                <%= link_to expenses_path, class: 'sub-menu-link',data: { turbo_frame: 'expense' } do %>
                   <span class="d2c_icon">
-                    <i class="fas fa-network-wired"></i>
+                    <i class="fas fa-money-bill-wave"></i>
                   </span>
                   <span>
-                    Investment
+                    Expenses
                   </span>
-                </a>
-              </li> %>
+                <% end %>
+              </li>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
               <%# <li class="nav-item">
@@ -261,61 +262,6 @@
                   </span>
                 <% end %>
               </li>
-              <!-- End:Sub Menu Item -->
-              <!-- Sub Menu Item -->
-              <%# <li class="nav-item">
-                <a class="sub-menu-link" data-bs-toggle="collapse" data-bs-target="#authentication" aria-expanded="false" href="#">
-                  <span class="d2c_icon">
-                    <i class="fas fa-sticky-note"></i>
-                  </span>
-                  <span>
-                    Authentication
-                  </span>
-                  <span class="fas fa-chevron-right ms-auto text-end"></span>
-                </a>
-                <!-- Child Sub Menu -->
-                <ul class="sub-menu collapse" id="authentication">
-                  <!-- Child Sub Menu Item -->
-                  <li class="nav-item">
-                    <a class="nav-link" href="./pages/authentication/signUp.html">
-                      <span>
-                        Sing up
-                      </span>
-                    </a>
-                  </li>
-                  <!-- End:Child Sub Menu Item -->
-                  <!-- Child Sub Menu Item -->
-                  <li class="nav-item">
-                    <a class="nav-link" href="./pages/authentication/signIn.html">
-                      <span>
-                        Login
-                      </span>
-                    </a>
-                  </li>
-                  <!-- End:Child Sub Menu Item -->
-                  <!-- Child Sub Menu Item -->
-                  <li class="nav-item">
-                    <a class="nav-link" href="./pages/authentication/forgetPassword.html">
-                      <span>
-                        Forget Password
-                      </span>
-                    </a>
-                  </li>
-                  <!-- End:Child Sub Menu Item -->
-                  <!-- Child Sub Menu Item -->
-                  <!-- End:Child Sub Menu Item -->
-                  <!-- Child Sub Menu Item -->
-                  <li class="nav-item">
-                    <a class="nav-link" href="./pages/authentication/404.html">
-                      <span>
-                        404
-                      </span>
-                    </a>
-                  </li>
-                  <!-- End:Child Sub Menu Item -->
-                </ul>
-                <!-- End:Child Sub Menu -->
-              </li> %>
               <!-- End:Sub Menu Item -->
               <!-- Sub Menu Item -->
               <%# <li class="nav-item">
